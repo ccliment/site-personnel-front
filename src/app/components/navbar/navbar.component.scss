@@ -1,0 +1,174 @@
+@import "../../../../node_modules/@angular/material/theming";
+@import "../../../style/responsive";
+
+.toolbar {
+  @include mat-elevation(6, black, .2);
+
+  position: fixed;
+  min-height: 64px;
+  background: white;
+  z-index: 2;
+
+  &:before {
+    background: $parallax_background;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -100;
+
+    transition: opacity .5s;
+  }
+
+  &.night {
+    background: $parallax_background;
+    color: white;
+
+    &:before {
+      opacity: 1;
+
+      transition: opacity .5s;
+    }
+
+    .toolbar-btn {
+      &.active {
+        background: lighten($parallax_color, 5);
+      }
+
+      &:hover {
+        background: lighten($parallax_color, 10);
+      }
+
+      span {
+        color: white;
+      }
+    }
+
+    mat-toolbar-row {
+      @include tablet-mobile {
+        background: $parallax_background;
+
+        div:not(.active) {
+          background: $parallax_color;
+        }
+      }
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    padding: 0 1.5rem;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      background: map_get($mat-grey, 200);
+      transition: background-color .2s;
+    }
+
+    @include tablet-mobile {
+      padding: 0;
+    }
+
+    &.active {
+      background: map_get($mat-grey, 50);
+
+      span {
+        color: map_get($mat-yellow, 800) !important;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      pointer-events: none;
+
+      span {
+        text-transform: uppercase;
+        font-size: small;
+        font-weight: bolder;
+        color: $dark-primary-text;
+      }
+    }
+  }
+
+  &-action {
+    display: none;
+    text-align: end;
+    height: 64px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    color: white;
+
+    @include tablet-mobile {
+      display: block;
+    }
+
+    mat-icon {
+      font-size: 3rem;
+      transform: translate(-2rem, .5rem);
+      user-select: none;
+      color: black;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  mat-toolbar-row {
+    height: 6rem;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+
+    @include tablet-mobile {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      height: calc(100vh - 64px);
+      width: 100vw;
+      padding: 0;
+      margin-top: 64px;
+
+      &.visible {
+        display: flex;
+      }
+
+      div {
+        width: 100%;
+
+        a {
+          display: block;
+          margin: auto;
+
+          span {
+            font-size: xx-large;
+          }
+        }
+      }
+    }
+
+    @include tablet-mobile {
+      background: white;
+
+      div:not(.active) {
+        background: white;
+      }
+    }
+  }
+}
+
+#toolbar-action.night mat-icon {
+  color: white;
+}

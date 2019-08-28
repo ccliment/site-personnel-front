@@ -1,0 +1,11 @@
+<div *ngIf="$alert.alertOpened"
+     [class]="'error-message ' + $alert.animationClass"
+     [ngClass]="{
+         'success-message': $alert.data?.success,
+         'warning-message': $alert.data?.warning
+     }">
+
+    <mat-card>
+        {{ $alert.data.message }}
+    </mat-card>
+</div>

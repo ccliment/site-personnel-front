@@ -1,0 +1,25 @@
+@import "variables";
+
+@mixin logo-size {
+  @media (max-width: 1450px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $media_large) and (min-width: $media_small) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $media_small - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media (max-width: $media_large) {
+    @content;
+  }
+}

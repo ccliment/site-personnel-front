@@ -1,0 +1,73 @@
+@import "../../node_modules/@angular/material/theming";
+@import "responsive";
+
+@mixin container-header {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  transform: translateY(-50%);
+  text-align: center;
+
+  h1, h2, p {
+    user-select: none;
+  }
+
+  h1, p {
+    text-transform: uppercase;
+  }
+
+  p {
+    color: map_get($mat-yellow, 800);
+    font-size: x-large;
+
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: $dark-primary-text;
+    margin: 0 0 1rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  h2 {
+    color: $dark-secondary-text;
+    font-size: larger;
+    margin: 0;
+  }
+}
+
+@mixin container {
+  position: relative;
+  width: 60%;
+  margin: 25vh auto auto;
+  z-index: 1;
+  text-align: center;
+
+  &:nth-child(1) {
+    margin: 50vh auto auto;
+  }
+
+  @include tablet {
+    width: 80%;
+  }
+
+  @include mobile {
+    width: 95%;
+  }
+}
+
+@mixin star-properties {
+  $size: random(3) * 1px;
+  $x: random(110) * 1vw;
+  $y: random(110) * 1vh;
+
+  height: $size;
+  width: $size;
+
+  left: $x - 5vw;
+  top: $y - 5vh;
+}

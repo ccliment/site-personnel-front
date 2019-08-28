@@ -1,0 +1,48 @@
+@import "../../../style/responsive";
+
+div.error-message {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+  margin-top: 25px;
+
+  &.success-message {
+    mat-card {
+      background: $alert_green;
+    }
+  }
+
+  &.warning-message {
+    mat-card {
+      background: $alert_orange;
+    }
+  }
+
+  mat-card {
+    padding: 16px;
+    background: $alert_red;
+    color: white;
+    text-align: center;
+    width: 25%;
+    font-weight: bold;
+
+    @include tablet {
+      width: 75%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  ul {
+    margin-top: 1em;
+    padding: 0;
+
+    font-weight: initial;
+    list-style: none;
+  }
+
+}

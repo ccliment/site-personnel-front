@@ -1,0 +1,422 @@
+<app-navbar></app-navbar>
+
+<header id="home" class="scroll-element">
+    <div #scene id="scene">
+        <div data-depth="0.50" class="layer" id="stars-small">
+            <div class="star" *ngFor="let star of arrayThree(100)"></div>
+        </div>
+
+        <div data-depth="0.60" class="layer" id="stars-medium">
+            <div class="star" *ngFor="let star of arrayThree(50)"></div>
+        </div>
+
+        <div data-depth="0.70" class="layer" id="stars-big">
+            <div class="star" *ngFor="let star of arrayThree(25)"></div>
+        </div>
+    </div>
+
+    <section class="container">
+        <p>Je suis</p>
+        <h1>Charles Climent</h1>
+        <h2>Développeur web</h2>
+
+        <div class="container-images">
+            <img [src]="'assets/img/angular.svg'"
+                 alt="Angular"
+                 matTooltip="Spécialisé Angular"
+                 matTooltipPosition="left"
+                 (mouseover)="onHoverLogo($event, 'angular')"
+                 (mouseout)="onHoverLogo($event, 'angular')"
+                 loading="lazy"
+                 class="container-logo">
+
+            <img [src]="'assets/img/symfony.svg'"
+                 alt="Symfony"
+                 matTooltip="Spécialisé Symfony"
+                 matTooltipPosition="right"
+                 (mouseover)="onHoverLogo($event, 'symfony')"
+                 (mouseout)="onHoverLogo($event, 'symfony')"
+                 loading="lazy"
+                 class="container-logo">
+        </div>
+    </section>
+
+    <span class="scroll-btn">
+        <span class="mouse"
+              (click)="scroll.scrollToElement('about')"
+              matTooltip="Défilez verticalement pour voir plus"
+              matTooltipPosition="above">
+            <span></span>
+        </span>
+    </span>
+</header>
+
+<main>
+    <section class="container scroll-element wow fadeIn" id="about">
+        <h2>À propos de moi</h2>
+
+        <article class="container-group reverse-group">
+            <aside class="container-content">
+                <p>
+                    Initialement détenteur d'une certification professionnelle de "Technicien, Réalisateur/Monteur" discernée par ACFA Multimédia, je me suis par la suite réorienté dans le domaine du développement web en suivant une formation accélérée avec l'organisme WebForce3.
+                </p>
+
+                <p>
+                    Cette formation m'a permis d'apprendre les bases de la conception simple d'un site web en PHP.
+                    <br>
+                    Au bout de 3 mois d'apprentissage, j'ai pu accéder à un stage de 4 mois en entreprise, puis par la suite trouver mon premier emploi dans lequel j'officie depuis le 17 septembre 2018.
+                </p>
+
+                <p>
+                    Les technologies que je maîtrise actuellement (Angular, Symfony, ...) ont été apprises grâce à un apprentissage personnel ainsi qu'une veille technologoique quotidienne.
+                </p>
+            </aside>
+
+            <div>
+                <img [src]="'assets/img/photo_charles.png'"
+                     loading="lazy"
+                     draggable="false"
+                     title="Charles Climent"
+                     alt="Charles Climent">
+
+                <h3>Homme - {{ age }} ans - Lyon</h3>
+            </div>
+        </article>
+    </section>
+
+    <section class="container scroll-element wow fadeIn" id="skills">
+        <h2>Mes compétences</h2>
+
+        <article class="container-group">
+            <mat-card>
+                <aside>
+                    <i class="lni-code-alt"></i>
+                    <strong>Front</strong>
+                </aside>
+
+                <ul>
+                    <li>
+                        <a href="https://angular.io/" title="Angular 2+" target="_blank">Angular 2+</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.typescriptlang.org/" title="TypeScript" target="_blank">TypeScript</a>
+                        /
+                        <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" title="JavaScript" target="_blank">JavaScript</a>
+                    </li>
+
+                    <li>
+                        <a href="http://lesscss.org/" title="LESS" target="_blank">LESS</a>
+                        /
+                        <a href="https://sass-lang.com/" title="SCSS" target="_blank">SASS (SCSS)</a>
+                    </li>
+
+                    <li>
+                        <a href="https://rxjs-dev.firebaseapp.com/" title="RxJS" target="_blank">RxJS</a>
+                    </li>
+
+                    <li>
+                        <a href="https://jquery.com/" title="jQuery" target="_blank">jQuery</a>
+                    </li>
+
+                    <li>
+                        <a href="https://developer.mozilla.org/fr/docs/Web/HTML" title="HTML / CSS" target="_blank">HTML / CSS</a>
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://electronjs.org/" title="Electron" target="_blank">Electron</a>
+                        (notions)
+                    </li>
+                </ul>
+            </mat-card>
+
+            <mat-card>
+                <aside>
+                    <i class="lni-website"></i>
+                    <strong>Back</strong>
+                </aside>
+
+                <ul>
+                    <li>
+                        <a href="https://symfony.com/" title="Symfony 4+" target="_blank">Symfony 4+</a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/FriendsOfSymfony/FOSRestBundle" title="API REST" target="_blank">API REST (via FOSRestBundle)</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.php.net/" title="PHP (POO / MVC)" target="_blank">PHP (POO / MVC)</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.mysql.com/fr/" title="SQL (mySQL)" target="_blank">SQL (mySQL)</a>
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://api-platform.com/" title="API Platform" target="_blank">API Platform</a>
+                        (notions)
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://nodejs.org/fr/" title="NodeJS" target="_blank">NodeJS</a>
+                        /
+                        <a href="https://expressjs.com/fr/" title="ExpressJS" target="_blank">ExpressJS</a>
+                        (notions)
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://fr.wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+                        (notions)
+                    </li>
+                </ul>
+            </mat-card>
+
+            <mat-card>
+                <aside>
+                    <i class="lni-support"></i>
+                    <strong>Autres</strong>
+                </aside>
+
+                <ul>
+                    <li>
+                        <a href="https://developers.google.com/maps/documentation/?hl=fr" title="Google Maps" target="_blank">Google Maps</a>
+                        /
+                        <a href="https://www.openstreetmap.org/" title="OpenStreetMap" target="_blank">OpenStreetMap</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.elastic.co/fr/products/elasticsearch" title="ElasticSearch" target="_blank">ElasticSearch</a>
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://dart.dev/" title="Dart" target="_blank">Dart</a>
+                        /
+                        <a href="https://fr.wikipedia.org/wiki/C%2B%2B" title="C++" target="_blank">C++</a>
+                        /
+                        <a href="https://www.python.org/" title="Python" target="_blank">Python</a>
+                        /
+                        <a href="https://kotlinlang.org/" title="Kotlin" target="_blank">Kotlin</a>
+                        (notions)
+                    </li>
+
+                    <li class="skill-basics">
+                        <a href="https://flutter.dev/" title="Flutter" target="_blank">Flutter</a>
+                        (notions)
+                    </li>
+                </ul>
+            </mat-card>
+        </article>
+
+        <p>Développements effectués sur Ubuntu, avec l'IDE PhpStorm.</p>
+    </section>
+
+    <section class="container scroll-element wow fadeIn" id="experience">
+        <h2>Mon expérience</h2>
+
+        <article class="container-group">
+            <div class="exp-card" (click)="openDialog(0)">
+                <img [src]="'assets/img/webforce3.png'"
+                     draggable="false"
+                     alt="WebForce3">
+
+                <div>
+                    <p>Formation au développement web</p>
+                    <p>Septembre 2017 - Février 2018</p>
+                </div>
+            </div>
+
+            <ng-template #expDesc>
+                <span mat-dialog-title>Formation au développement web</span>
+
+                <div>
+                    Descriptifs et missions à venir...
+                </div>
+            </ng-template>
+
+            <div class="exp-card" (click)="openDialog(1)">
+                <img [src]="'assets/img/sura.png'"
+                     draggable="false"
+                     alt="Sura">
+
+                <div>
+                    <p>Développement d'un site e-commerce (Stage)</p>
+                    <p>Avril 2018 - Septembre 2018</p>
+                </div>
+            </div>
+
+            <ng-template #expDesc>
+                <span mat-dialog-title>Développement d'un site e-commerce (Stage)</span>
+
+                Descriptifs et missions à venir...
+            </ng-template>
+        </article>
+
+        <article class="container-group">
+            <div class="exp-card" (click)="openDialog(2)">
+                <img [src]="'assets/img/intuitiv-technology.png'"
+                     draggable="false"
+                     alt="Intuitiv Technology">
+
+                <div>
+                    <p>Maintenance de projets Symfony</p>
+                    <p>Septembre 2018 - Décembre 2018</p>
+                </div>
+            </div>
+
+            <ng-template #expDesc>
+                <span mat-dialog-title>Maintenance de projets Symfony</span>
+
+                Descriptifs et missions à venir...
+            </ng-template>
+
+            <div class="exp-card" (click)="openDialog(3)">
+                <img [src]="'assets/img/latitud.png'"
+                     draggable="false"
+                     alt="Latitud">
+
+                <div>
+                    <p>Développement de logiciels et solutions pour l'immobilier</p>
+                    <p>Depuis décembre 2018</p>
+                </div>
+            </div>
+
+            <ng-template #expDesc>
+                <span mat-dialog-title>Développement de logiciels et solutions pour l'immobilier</span>
+
+                Descriptifs et missions à venir...
+            </ng-template>
+        </article>
+    </section>
+
+    <section class="container scroll-element wow fadeIn" id="more">
+        <h2>Autres</h2>
+
+        <article class="container-group">
+            <div class="container-more">
+                <span>
+                    Bénévolat
+                </span>
+
+                <ul>
+                    <li>
+                        Millenium.org
+                        <span>(montage vidéo)</span>
+                    </li>
+                    <li>
+                        Creative Community
+                        <span>(Réalisation / Montage)</span>
+                    </li>
+                    <li>
+                        Pôle Emploi
+                        <span>(Service Civique)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container-more">
+                <span>
+                    Langues
+                </span>
+
+                <ul>
+                    <li>Anglais (bon)</li>
+                    <li>Espagnol (notions)</li>
+                </ul>
+            </div>
+
+            <div class="container-more">
+                <span>
+                    Centres d'intérêt
+                </span>
+
+                <ul>
+                    <li>Cinéma</li>
+                    <li>Informatique</li>
+                    <li>Jeux vidéo</li>
+                    <li>Réseaux sociaux</li>
+                    <li>Nouvelles technologies</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <section class="container scroll-element wow fadeIn" id="contact">
+        <h2>Me contacter</h2>
+
+        <form [formGroup]="contact_form" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Votre nom</mat-label>
+
+                    <mat-icon matPrefix>face</mat-icon>
+
+                    <input matInput type="text" formControlName="name" autocomplete="off" required>
+
+                    <mat-error *ngIf="fieldIsInvalid('name')">Le nom est requis</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse email</mat-label>
+
+                    <mat-icon matPrefix>alternate_email</mat-icon>
+
+                    <input matInput type="email" formControlName="email" required>
+
+                    <mat-error *ngIf="fieldIsInvalid('email')">
+                        {{ getFieldErrorMessage('email') }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Sujet</mat-label>
+
+                <mat-icon matPrefix>info</mat-icon>
+
+                <input matInput type="text" #subjectInput maxlength="150" autocomplete="off" formControlName="subject">
+
+                <mat-hint>{{ subjectInput.value?.length }}/150</mat-hint>
+
+                <mat-error *ngIf="fieldIsInvalid('subject')">
+                    {{ getFieldErrorMessage('subject') }}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+
+                <textarea matInput #messageInput cols="30" rows="10" maxlength="5000" formControlName="message" required></textarea>
+
+                <mat-hint>{{ messageInput.value?.length }}/5000</mat-hint>
+
+                <mat-error *ngIf="fieldIsInvalid('message')">
+                    {{ getFieldErrorMessage('message') }}
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button
+                    color="primary"
+                    type="submit"
+                    [disabled]="contact_form.invalid || submitInProgress">
+
+                <ng-container *ngIf="submitInProgress; else submitNotProgress">
+                    <mat-spinner diameter="25"></mat-spinner>
+                </ng-container>
+
+                <ng-template #submitNotProgress>
+                    Envoyer
+                </ng-template>
+            </button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>Retrouvez le code source de ce site sur
+        <a href="https://github.com/ccliment/site-personnel-front"
+           target="_blank"
+           title="Site personnel">
+            mon github</a> !
+    </p>
+</footer>

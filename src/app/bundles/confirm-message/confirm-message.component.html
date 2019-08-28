@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>
+    {{ data?.title || 'Confirmation de suppression' }}
+</h1>
+
+<div mat-dialog-content class="message">
+    {{ data?.message || 'Êtes-vous sûr de vouloir supprimer l\'élément sélectionné ?' }}
+    <br>
+    {{ data?.action || 'Cette action est définitive.' }}
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="false">Non</button>
+    <button mat-button color="warn" [mat-dialog-close]="true">Oui</button>
+</div>

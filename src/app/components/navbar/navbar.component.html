@@ -1,0 +1,50 @@
+<span class="toolbar-action" id="toolbar-action">
+    <mat-icon aria-hidden="false"
+              (click)="toggleMenuState()"
+              [attr.aria-label]="(open_mobile_menu ? 'Fermeture' : 'Ouverture') + ' du menu'">
+        {{ open_mobile_menu ? 'close' : 'menu' }}
+    </mat-icon>
+</span>
+
+<mat-toolbar class="toolbar" id="navbar">
+    <mat-toolbar-row id="navbar-row" [class]="navbar_classes">
+
+        <!-- Éléments de navigation -->
+        <div class="toolbar-btn active" data-target="home" (click)="scroll.scrollToElement($event)">
+            <a title="Introduction">
+                <span>Introduction</span>
+            </a>
+        </div>
+
+        <div class="toolbar-btn" data-target="about" (click)="scroll.scrollToElement($event)">
+            <a title="À propos">
+                <span>À propos</span>
+            </a>
+        </div>
+
+        <div class="toolbar-btn" data-target="skills" (click)="scroll.scrollToElement($event)">
+            <a title="Compétences">
+                <span>Compétences</span>
+            </a>
+        </div>
+
+        <div class="toolbar-btn" data-target="experience" (click)="scroll.scrollToElement($event)">
+            <a title="Expérience">
+                <span>Expérience</span>
+            </a>
+        </div>
+
+        <div class="toolbar-btn" data-target="more" (click)="scroll.scrollToElement($event)">
+            <a title="Autres">
+                <span>Autres</span>
+            </a>
+        </div>
+
+        <div class="toolbar-btn" data-target="contact" (click)="scroll.scrollToElement($event)">
+            <a title="Contact">
+                <span>Contact</span>
+            </a>
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>

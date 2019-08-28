@@ -1,0 +1,11 @@
+@import "style/variables";
+
+body {
+  margin: 0;
+  background: $background_color;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+}
+
+.mat-tooltip {
+  font-size: 1rem;
+}
