@@ -190,6 +190,14 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
     return null;
   }
 
+  /**
+   * Soumission du formulaire.
+   *
+   * @param event
+   *    Événement de validation.
+   *
+   * @remarks L'événement est nécessaire pour réinitialiser la validation sur les champs du formulaire.
+   */
   public async onSubmit(event: Event) {
     if (this.submitInProgress) {
       return;

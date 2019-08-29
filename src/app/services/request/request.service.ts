@@ -10,6 +10,12 @@ export class RequestService {
   constructor(private http: HttpClient) {
   }
 
+  /**
+   * Envoie le formulaire de contact à l'API.
+   *
+   * @param values
+   *    Données à envoyer
+   */
   public async sendContactForm(values): Promise<object> {
     return this.http.post(`${environment.api}/contacts`, values).toPromise();
   }
