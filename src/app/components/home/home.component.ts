@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '../../bundles/alert-message/alert-message.service';
 import { RequestService } from '../../services/request/request.service';
 import { Scroll } from '../../class/scroll';
-import { AlertStatus } from '../../interfaces/alert-status';
 
 /**
  * Component "HomeComponent".
@@ -191,7 +190,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
     return null;
   }
 
-  public async onSubmit() {
+  public async onSubmit(event: Event) {
     if (this.submitInProgress) {
       return;
     }
@@ -199,7 +198,10 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
     this.submitInProgress = true;
 
     try {
-      const res: AlertStatus = await this.$request.sendContactForm(this.contact_form.value);
+      await this.$request.sendContactForm(this.contact_form.value);
+
+      (event.target as HTMLFormElement).reset();
+      this.contact_form.reset();
 
       this.$alert.openAlert({
         success: true,
