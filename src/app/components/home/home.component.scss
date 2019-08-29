@@ -77,9 +77,12 @@ main {
   .container {
     @include container;
 
+    &-group, form {
+      margin-top: 10vh;
+    }
+
     &-group {
       display: flex;
-      margin-top: 10vh;
 
       div, aside {
         width: 50%;
@@ -257,7 +260,7 @@ main {
         }
 
         @include mobile {
-          padding: auto 5%;
+          padding: 0 5%;
         }
       }
     }
@@ -469,5 +472,9 @@ footer {
   p {
     text-align: center;
     font-weight: bold;
+
+    @include mobile {
+      padding: 0 5%;
+    }
   }
 }

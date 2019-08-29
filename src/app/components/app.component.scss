@@ -1,0 +1,17 @@
+#konami {
+  width: 374px;
+  height: 375px;
+  transition: 6s all;
+  position: fixed;
+  right: -374px;
+  bottom: calc(-50% + 350px);
+  z-index: 999999;
+
+  &.move1 {
+    right: calc(50% - 184px);
+  }
+
+  &.move2 {
+    right: calc(100% + 375px);
+  }
+}
