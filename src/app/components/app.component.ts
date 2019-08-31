@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as Konami from 'konami/konami';
+import * as MobileDetect from 'mobile-detect';
 
 /**
  * Component "AppComponent".
@@ -19,9 +20,13 @@ export class AppComponent {
   /** ****************************** */
 
   constructor() {
-    new Konami(() => {
-      this._triggerKonami()
-    });
+    const md = new MobileDetect(navigator.userAgent);
+
+    if (!(md.mobile() || md.tablet())) {
+      new Konami(() => {
+        this._triggerKonami()
+      });
+    }
   }
 
 
