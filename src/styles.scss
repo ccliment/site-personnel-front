@@ -4,6 +4,10 @@ body {
   margin: 0;
   background: $background_color;
   font-family: Poppins, "Helvetica Neue", sans-serif;
+
+  &.fixed {
+    overflow-y: hidden;
+  }
 }
 
 .mat-tooltip {

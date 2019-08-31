@@ -5,6 +5,8 @@ export class Scroll {
   /** ********* VARIABLES ********** */
   /** ****************************** */
 
+  /** Body de la page */
+  public body: HTMLBodyElement;
   /** Taille de la navbar + 50px afin de laisser une marge à l'animation des éléments trigger au clic */
   public toolbar_offset: number;
   /** Liste des élements cliquables du menu */
@@ -18,6 +20,8 @@ export class Scroll {
   /** ****************************** */
 
   public initialize(): void {
+    this.body = document.getElementsByTagName('body').item(0);
+
     this.toolbar_offset = document.getElementById('navbar').offsetHeight + PAGE_OFFSET;
     this.elements_targeted = document.querySelectorAll('[data-target]');
     this.scroll_elements = document.querySelectorAll('.scroll-element');
@@ -39,6 +43,7 @@ export class Scroll {
     }
 
     const offset = element.offsetTop - this.toolbar_offset;
+    this.body.classList.remove('fixed');
 
     window.scroll({
       top: offset,

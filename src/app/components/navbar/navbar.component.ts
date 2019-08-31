@@ -97,6 +97,16 @@ export class NavbarComponent implements OnInit {
   }
 
   /**
+   * Par précaution, force la fermeture du menu et retire la classe "fixed" sur le body lors du redimentionnement du navigateur.
+   */
+  @HostListener('window:resize')
+  public onResize(): void {
+    this.scroll.body.classList.remove('fixed');
+
+    this._resetNavbarClasses();
+  }
+
+  /**
    * Modifie l'état et les classes du menu
    */
   public toggleMenuState(): void {
@@ -104,12 +114,16 @@ export class NavbarComponent implements OnInit {
       this.open_mobile_menu = false;
       this.navbar_classes = 'mat-toolbar-row visible animated faster fadeOut';
 
+      this.scroll.body.classList.remove('fixed');
+
       setTimeout(() => {
         this._resetNavbarClasses();
       }, 500);
     } else {
       this.open_mobile_menu = true;
       this.navbar_classes = 'mat-toolbar-row visible animated faster fadeIn';
+
+      this.scroll.body.classList.add('fixed');
     }
   }
 
