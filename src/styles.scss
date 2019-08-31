@@ -1,4 +1,4 @@
-@import "style/variables";
+@import "style/responsive";
 
 body {
   margin: 0;
@@ -8,4 +8,10 @@ body {
 
 .mat-tooltip {
   font-size: 1rem;
+}
+
+.cdk-overlay-pane {
+  @include mobile {
+    max-width: 100vw !important;
+  }
 }

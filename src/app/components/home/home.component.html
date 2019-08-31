@@ -232,7 +232,7 @@
             <ng-template #expDesc>
                 <span mat-dialog-title>Formation au développement web</span>
 
-                <div>
+                <div mat-dialog-content>
                     <p>
                         Formation de développement web se déroulant sur 3 mois.
                         <br>
@@ -243,6 +243,12 @@
                         Projet de fin de formation : développement d'un CMS permettant la réalisation de site vitrine et e-commerce en Symfony (framework appris et projet terminé en 10 jours).
                     </p>
                 </div>
+
+                <span mat-dialog-actions class="dialog-actions">
+                    <button mat-button mat-dialog-close color="primary">
+                        Fermer
+                    </button>
+                </span>
             </ng-template>
 
             <div class="exp-card" (click)="openDialog(1)">
@@ -260,7 +266,7 @@
             <ng-template #expDesc>
                 <span mat-dialog-title>Développement d'un site e-commerce (Stage)</span>
 
-                <div>
+                <div mat-dialog-content>
                     <p>
                         Stage réalisé au sein du groupe SURA, développement d'un site e-commerce aux côtés d'un autre développeur/intégrateur.
                     </p>
@@ -288,6 +294,12 @@
                         NB : le design du site a complètement été remanié depuis la fin de mon stage, il ne reflète visuellement plus aujourd'hui le travail que j'ai effectué dessus.
                     </p>
                 </div>
+
+                <span mat-dialog-actions class="dialog-actions">
+                    <button mat-button mat-dialog-close color="primary">
+                        Fermer
+                    </button>
+                </span>
             </ng-template>
         </article>
 
@@ -307,11 +319,17 @@
             <ng-template #expDesc>
                 <span mat-dialog-title>Maintenance de projets Symfony</span>
 
-                <div>
+                <div mat-dialog-content>
                     <p>
                         Première expérience professionnelle, maintenance de divers projets en Symfony encadré par des lead developers.
                     </p>
                 </div>
+
+                <span mat-dialog-actions class="dialog-actions">
+                    <button mat-button mat-dialog-close color="primary">
+                        Fermer
+                    </button>
+                </span>
             </ng-template>
 
             <div class="exp-card" (click)="openDialog(3)">
@@ -329,7 +347,7 @@
             <ng-template #expDesc>
                 <span mat-dialog-title>Développement de logiciels et solutions pour l'immobilier</span>
 
-                <div>
+                <div mat-dialog-content>
                     <p>
                         Conception d'un CMS complet et dynamique avec prévisualisation en temps réel.
                     </p>
@@ -347,6 +365,12 @@
                         <li>...</li>
                     </ul>
                 </div>
+
+                <span mat-dialog-actions class="dialog-actions">
+                    <button mat-button mat-dialog-close color="primary">
+                        Fermer
+                    </button>
+                </span>
             </ng-template>
         </article>
     </section>
