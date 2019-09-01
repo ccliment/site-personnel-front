@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Scroll } from '../../class/scroll';
+import * as MobileDetect from 'mobile-detect';
 
 /**
  * Component "NavbarComponent".
@@ -18,6 +19,9 @@ export class NavbarComponent implements OnInit {
   /** ********* VARIABLES ********** */
   /** ****************************** */
 
+  /** Module de détection du type du type de device client (desktop, mobile, tablet, ...) **/
+  private _md: MobileDetect;
+
   /** Définit l'ouverture/fermeture du menu pour mobile */
   public open_mobile_menu?: boolean = null;
   /** Définit les classes à mettre sur le menu */
@@ -32,6 +36,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this._md = new MobileDetect(navigator.userAgent);
     this.scroll.initialize();
 
     this.onPageScroll();
@@ -59,6 +64,10 @@ export class NavbarComponent implements OnInit {
    */
   @HostListener('window:scroll')
   public onPageScroll(): void {
+    if (this.scroll.body.classList.contains('fixed')) {
+      return;
+    }
+
     const elementsVisibles: Element[] = [];
 
     this.scroll.scroll_elements.forEach(scroll => {
@@ -101,6 +110,10 @@ export class NavbarComponent implements OnInit {
    */
   @HostListener('window:resize')
   public onResize(): void {
+    if (this._md.mobile() || this._md.tablet() || this.scroll.body.classList.contains('fixed')) {
+      return;
+    }
+
     this.scroll.body.classList.remove('fixed');
 
     this._resetNavbarClasses();
