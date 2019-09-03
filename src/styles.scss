@@ -1,4 +1,4 @@
-@import "style/responsive";
+@import "style/mixins";
 
 body {
   margin: 0;
@@ -7,6 +7,10 @@ body {
 
   &.fixed {
     overflow: hidden;
+  }
+
+  &.accessibility {
+    @include accessibility;
   }
 }
 

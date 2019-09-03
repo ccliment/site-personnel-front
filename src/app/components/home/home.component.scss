@@ -121,7 +121,7 @@ main {
 
           i {
             display: block;
-            color: map_get($mat-yellow, 800);
+            color: $primary_color;
 
             transition: .2s;
 
@@ -131,7 +131,7 @@ main {
 
             &:hover {
               transition: .3s;
-              color: map_get($mat-indigo, 500);
+              color: $secondary_color;
             }
           }
         }
@@ -143,7 +143,7 @@ main {
 
           li {
             font-size: large;
-            color: map_get($mat-gray, 600);
+            color: $tertiary_color;
 
             transition: .2s;
 
@@ -152,7 +152,7 @@ main {
               transform: scale(1.1);
 
               a {
-                color: map_get($mat-indigo, 500);
+                color: $secondary_color;
               }
             }
 
@@ -163,7 +163,7 @@ main {
 
             a {
               text-decoration: none;
-              color: map_get($mat-gray, 600);
+              color: $tertiary_color;
             }
           }
         }
@@ -195,7 +195,7 @@ main {
           }
 
           div {
-            background: map_get($mat-yellow, 800);
+            background: $primary_color;
 
             p {
               color: white !important;
@@ -236,7 +236,7 @@ main {
             transform: translateX(-50%);
             width: 100%;
 
-            color: map_get($mat-gray, 600);
+            color: $tertiary_color;
             font-size: small;
           }
         }
@@ -272,7 +272,7 @@ main {
 
       & > span {
         display: block;
-        background: map_get($mat-yellow, 800);
+        background: $primary_color;
         padding: 1.5rem 0;
         font-weight: bold;
         text-transform: uppercase;
@@ -451,7 +451,7 @@ main {
   .star {
     display: inline-block;
     border-radius: 100%;
-    background-color: map_get($mat-yellow, 800);
+    background-color: $primary_color;
     position: absolute;
   }
 }
@@ -470,11 +470,32 @@ footer {
   margin-top: 15rem;
 
   p {
-    text-align: center;
-    font-weight: bold;
+    &:nth-child(1) {
+      text-align: center;
+      font-weight: bold;
 
-    @include mobile {
-      padding: 0 5%;
+      @include mobile {
+        padding: 0 5%;
+      }
+    }
+
+    &:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+
+      a {
+        display: flex;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 500;
+
+        mat-icon {
+          margin-right: .3rem;
+        }
+      }
     }
   }
 }

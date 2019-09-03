@@ -499,10 +499,18 @@
 </main>
 
 <footer>
-    <p>Retrouvez le code source de ce site sur
+    <p>
+        Retrouvez le code source de ce site sur
         <a href="https://github.com/ccliment/site-personnel-front"
            target="_blank" rel="noopener noreferrer"
            title="Site personnel">
             mon github</a> !
+    </p>
+
+    <p>
+        <a href="#" title="Modifier le contraste" (click)="toggleAccessibilityState($event)">
+            <mat-icon>visibility{{ accessibility ? '' : '_off' }}</mat-icon>
+            <span>Version {{ accessibility ? 'standard' : 'contrastée' }}</span>
+        </a>
     </p>
 </footer>

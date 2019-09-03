@@ -80,8 +80,8 @@
     &.active {
       background: map_get($mat-grey, 50);
 
-      span {
-        color: map_get($mat-yellow, 800) !important;
+      a span {
+        color: $primary_color;
       }
     }
 

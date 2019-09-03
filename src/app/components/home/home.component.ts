@@ -44,6 +44,15 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
 
 
   /** ****************************** */
+  /** ***** GETTERS / SETTERS ****** */
+  /** ****************************** */
+
+  public get accessibility(): boolean {
+    return this.scroll.body.classList.contains('accessibility');
+  }
+
+
+  /** ****************************** */
   /** ****** MÉTHODES ANGULAR ****** */
   /** ****************************** */
 
@@ -223,6 +232,18 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
     }
 
     this.submitInProgress = false;
+  }
+
+  /**
+   * Modifie les couleurs du sites afin de les rendre compatibles avec les normes en terme d'accéssibilité.
+   *
+   * @param event
+   *    Click sur l'élément modifiant la classe du body
+   */
+  public toggleAccessibilityState(event: MouseEvent): void {
+    event.preventDefault();
+
+    this.scroll.body.classList.toggle('accessibility');
   }
 
 }

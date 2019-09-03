@@ -1,4 +1,3 @@
-@import "../../node_modules/@angular/material/theming";
 @import "responsive";
 
 @mixin container-header {
@@ -17,7 +16,7 @@
   }
 
   p {
-    color: map_get($mat-yellow, 800);
+    color: $primary_color;
     font-size: x-large;
 
     margin: 0;
@@ -70,4 +69,36 @@
 
   left: $x - 5vw;
   top: $y - 5vh;
+}
+
+@mixin accessibility {
+  .mat-raised-button[disabled][disabled] {
+    color: rgba(0, 0, 0, .56) !important;
+  }
+
+  .toolbar {
+    &.night .toolbar-btn.active span {
+      color: $primary_color !important;
+    }
+
+    &-btn.active span {
+      color: darken($primary_color, 24) !important;
+    }
+  }
+
+  main .container {
+    &-group mat-card i {
+      color: darken($primary_color, 14) !important;
+    }
+
+    &-more {
+      & > span {
+        background: darken($primary_color, 23) !important;
+      }
+
+      ul li span {
+        color: darken(map_get($mat-gray, 500), 17) !important;
+      }
+    }
+  }
 }

@@ -1,3 +1,5 @@
+@import "../../node_modules/@angular/material/theming";
+
 $media_large: 991px;
 $media_small: 768px;
 
@@ -11,3 +13,7 @@ $parallax_background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100
 $alert_red: #ff4444;
 $alert_orange: #FF8800;
 $alert_green: #00C851;
+
+$primary_color: map_get($mat-yellow, 800);
+$secondary_color: map_get($mat-indigo, 500);
+$tertiary_color: map_get($mat-gray, 600);
