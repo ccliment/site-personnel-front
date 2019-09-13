@@ -21,7 +21,7 @@
         <h2>Développeur web</h2>
 
         <div class="container-images">
-            <img [src]="'assets/img/angular.svg'"
+            <img data-src="assets/img/angular.svg"
                  alt="Angular"
                  title="Angular"
                  matTooltip="Spécialisé Angular"
@@ -29,9 +29,9 @@
                  (mouseover)="onHoverLogo($event, 'angular')"
                  (mouseout)="onHoverLogo($event, 'angular')"
                  loading="lazy"
-                 class="container-logo">
+                 class="container-logo lazyload">
 
-            <img [src]="'assets/img/symfony.svg'"
+            <img data-src="assets/img/symfony.svg"
                  alt="Symfony"
                  title="Symfony"
                  matTooltip="Spécialisé Symfony"
@@ -39,7 +39,7 @@
                  (mouseover)="onHoverLogo($event, 'symfony')"
                  (mouseout)="onHoverLogo($event, 'symfony')"
                  loading="lazy"
-                 class="container-logo">
+                 class="container-logo lazyload">
         </div>
     </section>
 
@@ -75,8 +75,9 @@
             </aside>
 
             <div>
-                <img [src]="'assets/img/photo_charles.png'"
+                <img data-src="assets/img/photo_charles.png"
                      loading="lazy"
+                     class="lazyload"
                      draggable="false"
                      title="Charles Climent"
                      alt="Charles Climent">
@@ -218,7 +219,9 @@
 
         <article class="container-group">
             <div class="exp-card" (click)="openDialog(0)">
-                <img [src]="'assets/img/webforce3.png'"
+                <img data-src="assets/img/webforce3.png"
+                     loading="lazy"
+                     class="lazyload"
                      draggable="false"
                      alt="WebForce3"
                      title="WebForce3">
@@ -252,7 +255,9 @@
             </ng-template>
 
             <div class="exp-card" (click)="openDialog(1)">
-                <img [src]="'assets/img/sura.png'"
+                <img data-src="assets/img/sura.png"
+                     loading="lazy"
+                     class="lazyload"
                      draggable="false"
                      alt="Sura"
                      title="Sura">
@@ -305,7 +310,9 @@
 
         <article class="container-group">
             <div class="exp-card" (click)="openDialog(2)">
-                <img [src]="'assets/img/intuitiv-technology.png'"
+                <img data-src="assets/img/intuitiv-technology.png"
+                     loading="lazy"
+                     class="lazyload"
                      draggable="false"
                      alt="Intuitiv Technology"
                      title="Intuitiv Technology">
@@ -333,7 +340,9 @@
             </ng-template>
 
             <div class="exp-card" (click)="openDialog(3)">
-                <img [src]="'assets/img/latitud.png'"
+                <img data-src="assets/img/latitud.png"
+                     loading="lazy"
+                     class="lazyload"
                      draggable="false"
                      alt="Latitud"
                      title="Latitud">

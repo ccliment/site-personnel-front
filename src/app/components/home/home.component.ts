@@ -94,7 +94,17 @@ export class HomeComponent implements OnInit, OnDestroy, AfterContentInit {
         Validators.required,
         Validators.maxLength(5000)
       ])
-    })
+    });
+
+    if ('loading' in HTMLImageElement.prototype) {
+      document.querySelectorAll('img[loading="lazy"]').forEach((img: HTMLImageElement) => {
+        img.src = img.dataset.src;
+      });
+    } else {
+      const script = document.createElement('script');
+      script.src = 'assets/js/lazysizes.min.js';
+      document.body.appendChild(script);
+    }
   }
 
   public ngOnDestroy() {
