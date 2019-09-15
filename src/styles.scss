@@ -1,5 +1,22 @@
 @import "style/mixins";
 
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-thumb {
+    background: $parallax_color;
+  }
+
+  &-track {
+    background: $background_color;
+  }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $parallax_color $background_color;
+}
+
 body {
   margin: 0;
   background: $background_color;
