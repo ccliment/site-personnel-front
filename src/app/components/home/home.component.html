@@ -439,71 +439,23 @@
     <section class="container scroll-element wow fadeIn" id="contact">
         <h2>Me contacter</h2>
 
-        <form [formGroup]="contact_form" (ngSubmit)="onSubmit($event)">
-            <div>
-                <mat-form-field appearance="outline">
-                    <mat-label>Votre nom</mat-label>
+        <p>
+            Vous pouvez librement me contacter sur les deux plateformes qui suivent.
+            <br>
+            Attention cependant, je ne suis pas en recherche d'emploi !
+        </p>
 
-                    <mat-icon matPrefix>face</mat-icon>
-
-                    <input matInput type="text" formControlName="name" autocomplete="off" required>
-
-                    <mat-error *ngIf="fieldIsInvalid('name')">Le nom est requis</mat-error>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Adresse email</mat-label>
-
-                    <mat-icon matPrefix>alternate_email</mat-icon>
-
-                    <input matInput type="email" formControlName="email" required>
-
-                    <mat-error *ngIf="fieldIsInvalid('email')">
-                        {{ getFieldErrorMessage('email') }}
-                    </mat-error>
-                </mat-form-field>
-            </div>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Sujet</mat-label>
-
-                <mat-icon matPrefix>info</mat-icon>
-
-                <input matInput type="text" #subjectInput maxlength="150" autocomplete="off" formControlName="subject">
-
-                <mat-hint>{{ subjectInput.value?.length }}/150</mat-hint>
-
-                <mat-error *ngIf="fieldIsInvalid('subject')">
-                    {{ getFieldErrorMessage('subject') }}
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Message</mat-label>
-
-                <textarea matInput #messageInput cols="30" rows="10" maxlength="5000" formControlName="message" required></textarea>
-
-                <mat-hint>{{ messageInput.value?.length }}/5000</mat-hint>
-
-                <mat-error *ngIf="fieldIsInvalid('message')">
-                    {{ getFieldErrorMessage('message') }}
-                </mat-error>
-            </mat-form-field>
-
-            <button mat-raised-button
-                    color="primary"
-                    type="submit"
-                    [disabled]="contact_form.invalid || submitInProgress">
-
-                <ng-container *ngIf="submitInProgress; else submitNotProgress">
-                    <mat-spinner diameter="25"></mat-spinner>
-                </ng-container>
-
-                <ng-template #submitNotProgress>
-                    Envoyer
-                </ng-template>
-            </button>
-        </form>
+        <p>
+            <a href="https://www.linkedin.com/in/charles-climent/"
+               target="_blank" rel="noopener noreferrer"
+               title="LinkedIn">
+                LinkedIn</a>
+            ou
+            <a href="https://twitter.com/ulrik_cc"
+               target="_blank" rel="noopener noreferrer"
+               title="Twitter">
+                Twitter</a>
+        </p>
     </section>
 </main>
 
