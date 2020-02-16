@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { NgwWowService } from 'ngx-wow';
 import * as Parallax from 'parallax-js';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { AlertService } from '../../bundles/alert-message/alert-message.service';
 import { RequestService } from '../../services/request/request.service';
 import { Scroll } from '../../class/scroll';
