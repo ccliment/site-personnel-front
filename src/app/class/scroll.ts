@@ -1,5 +1,7 @@
+import { Injectable } from "@angular/core";
 const PAGE_OFFSET = 30;
 
+@Injectable()
 export class Scroll {
   /** ****************************** */
   /** ********* VARIABLES ********** */
